@@ -1,2 +1,4 @@
 # Leetcode-hard
-My solutions to Leetcode hard problems
+My solutions of Leetcode hard problems
+
+**Current solved problems:** 3
