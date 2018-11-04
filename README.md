@@ -1,6 +1,6 @@
 # Leetcode-hard
 My solutions of Leetcode hard problems
 
-**Current solved problems:** 3
+**Current solved problems:** 2
 
-Average: 3 problems / day
+Average: 2 problems / day
