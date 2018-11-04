@@ -29,3 +29,34 @@ class Solution:
         :type lists: List[ListNode]
         :rtype: ListNode
         """
+
+
+# Testing:
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+a = ListNode(1)
+a2 = ListNode(1)
+b = ListNode(2)
+c = ListNode(3)
+d = ListNode(4)
+d2 = ListNode(4)
+e = ListNode(5)
+f = ListNode(6)
+
+a.next = d
+d.next = e
+
+a2.next = c
+c.next = d2
+
+b.next = f
+
+user_input = [
+    a, a2, b
+]
+for node in user_input:
+    print(node.val, node.next.val)
