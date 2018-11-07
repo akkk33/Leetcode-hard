@@ -52,23 +52,23 @@ import re
 
 
 class Solution:
-    def isMatch(self, s, p):
+    def is_match(self, s, p):
         """
         :type s: str
         :type p: str
         :rtype: bool
         """
-        if re.compile('^'+p+'$').match(s):
+        if re.compile('^' + p + '$').match(s):
             return True
         return False
 
 
 attempt = Solution()
-print(attempt.isMatch('aa', 'a'))  # False
-print(attempt.isMatch('aa', 'a*'))  # True
-print(attempt.isMatch('ab', '.*'))  # True
-print(attempt.isMatch('aab', 'c*a*b'))  # True
-print(attempt.isMatch('mississippi', 'mis*is*p*.'))  # False
+print(attempt.is_match('aa', 'a'))  # False
+print(attempt.is_match('aa', 'a*'))  # True
+print(attempt.is_match('ab', '.*'))  # True
+print(attempt.is_match('aab', 'c*a*b'))  # True
+print(attempt.is_match('mississippi', 'mis*is*p*.'))  # False
 
 """
 First attempt finished successfully with Runtime: 120 ms, faster than 23.26% of Python3 online submissions for Regular Expression Matching.
