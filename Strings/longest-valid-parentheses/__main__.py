@@ -21,7 +21,6 @@ but It never
 
 
 
-
 class Solution:
     def longest_valid_parentheses(self, s):
         """
