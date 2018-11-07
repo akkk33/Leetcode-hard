@@ -1,5 +1,6 @@
 """
 https://stackoverflow.com/a/28870795/7301680
+
 """
 from itertools import permutations
 
