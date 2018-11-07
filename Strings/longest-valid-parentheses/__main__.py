@@ -13,40 +13,37 @@ Example 2:
 Input: ")()())"
 Output: 4
 Explanation: The longest valid parentheses substring is "()()"
+#################3
+The last example is weird, I couldn't understand it so I made an algorithm to count only valid parantheses like () or (()) .. etc
+but It never
 
 """
+
+
 class Solution:
     def longest_valid_parentheses(self, s):
         """
         :type s: str
         :rtype: int
         """
-        if len(s) == 0 or len(s) == 1:
-            return 0
-        elif len(s) == 2:
-            if s == "()":
-                return 2
-            else:
-                return 0
-        count = []
-        popen = []
-        pclose = []
+        popen = 0
+        pclose = 0
+        result = []
+        if 0 <= s.find('(') < s.rfind(')'):
+            s = s[s.find('('):s.rfind(')') + 1]
+        else:
+            s = ''
         for index, letter in enumerate(s):
-            if letter == "(":
-                popen.append(index)
-            else:
-                pclose.append(index)
-        if len(popen) == 0 or len(pclose) == 0:
-            return 0
-        for opening in popen:
-            for closing in reversed(pclose):
-                entire = len(s[opening:closing])
-                if entire == 0:
-                    count.append(2)
-                elif entire % 2 == 0:
-                    count.append(entire)
-        return max(count)
+            if letter == '(':
+                if index != 0 and s[index - 1] != '(':
+                    popen = 0
+                popen += 1
+            else:  # )
+                pclose += 1
+                result.append(min(pclose, popen) * 2)
+        if len(result) > 0:
+            return max(result)
 
 
 ex = Solution()
-print(ex.longest_valid_parentheses("()()"))
+print(ex.longest_valid_parentheses(")()())"))
